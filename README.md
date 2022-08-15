@@ -57,3 +57,5 @@ After setting up Drupal and initializing Lando, you will now need a local develo
     hostnames: [ 'database.nololando.internal' ] } ]
     
  Now you copy one url (http://nolo-lando.lndo.site/) and paste on the browser, then follow Drupal setup and use this internal_connection to setup Drupal 9
+ 
+ To clone this Repo use: https://github.com/HloniDev/motshoenengl-drupal9.git
