@@ -59,3 +59,23 @@ After setting up Drupal and initializing Lando, you will now need a local develo
  Now you copy one url (http://nolo-lando.lndo.site/) and paste on the browser, then follow Drupal setup and use this internal_connection to setup Drupal 9
  
  To clone this Repo use: https://github.com/HloniDev/motshoenengl-drupal9.git
+ 
+ Once Drupal is Installed and setup:
+ To espose JSON:API endpoint:
+ Goto structure-content type
+ Add content type: mobile_phone_product with fields, sku, price, name and decription 
+ I created 1 content to see if I will get it when requesting from postman
+ to expose endpoint I enabled JSON:API modules this includes serialisation and REST API
+ then Configuration -> REST -> then click on edit of the content row then only check "GET" method
+ then the endpoint to get this mobile_phone_product contents is: http://localhost:54484/jsonapi/node/mobile_phone_product, I've added screenshots in motshoenengl-  drupal9\project working screenshots\endpoint GET request on postman.jpg
+ 
+ I added this in my settings.php under drupal sites folder 
+ $settings['trusted_host_patterns'] = [
+  '^'.getenv('LANDO_APP_NAME').'\.lndo\.site$',      # lando proxy access
+  '^localhost$',                                     # localhost access
+  '^'.getenv('LANDO_APP_NAME').'\.localtunnel\.me$', # lando share access
+  '^192\.168\.1\.100$'                               # LAN IP access
+];
+
+ 
+
